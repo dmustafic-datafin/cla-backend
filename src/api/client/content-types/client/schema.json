@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "identificationNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Muški",
+        "Ženski",
+        "Drugo",
+        "Ne želi da saopšti"
+      ],
+      "required": false
+    },
+    "address": {
+      "type": "string",
+      "required": false,
+      "minLength": 2
+    },
+    "phoneNumber": {
+      "type": "string",
+      "unique": false,
+      "minLength": 8
+    },
+    "email": {
+      "type": "email",
+      "minLength": 5
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "clients"
+    },
+    "client_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client-type.client-type",
+      "inversedBy": "clients"
+    }
+  }
+}

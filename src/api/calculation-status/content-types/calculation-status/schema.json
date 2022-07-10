@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calculation_statuses",
+  "info": {
+    "singularName": "calculation-status",
+    "pluralName": "calculation-statuses",
+    "displayName": "Calculation Status"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "calculations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::calculation.calculation",
+      "mappedBy": "calculation_status"
+    }
+  }
+}

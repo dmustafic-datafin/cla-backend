@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "minLength": 1
+    },
+    "identificationNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 1,
+      "maxLength": 13
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "clients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client.client",
+      "mappedBy": "company"
+    }
+  }
+}

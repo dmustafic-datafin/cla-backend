@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expenditure_types",
+  "info": {
+    "singularName": "expenditure-type",
+    "pluralName": "expenditure-types",
+    "displayName": "Expenditure Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "ordinalNumber": {
+      "type": "float",
+      "required": true,
+      "default": 0,
+      "private": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

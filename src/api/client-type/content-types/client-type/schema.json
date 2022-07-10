@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_types",
+  "info": {
+    "singularName": "client-type",
+    "pluralName": "client-types",
+    "displayName": "Client Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "minLength": 5,
+      "maxLength": 20
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "ordinalNumber": {
+      "type": "float"
+    },
+    "clients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client.client",
+      "mappedBy": "client_type"
+    }
+  }
+}

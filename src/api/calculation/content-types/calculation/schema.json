@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calculations",
+  "info": {
+    "singularName": "calculation",
+    "pluralName": "calculations",
+    "displayName": "calculation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "calculation_clientAdvisor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "calculations"
+    },
+    "calculation_status": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::calculation-status.calculation-status",
+      "inversedBy": "calculations"
+    },
+    "calculationNumberDatePart": {
+      "type": "integer"
+    },
+    "calculationNumberOrdinalNumberPart": {
+      "type": "integer"
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}
